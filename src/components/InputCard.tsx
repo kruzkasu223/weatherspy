@@ -2,9 +2,10 @@ import classes from '../styles/InputCard.module.css'
 
 type P = {
   setCity: React.Dispatch<React.SetStateAction<string>>
+  handleGetDeviceLocation: () => void
 }
 
-export const InputCard = ({ setCity }: P) => {
+export const InputCard = ({ setCity, handleGetDeviceLocation }: P) => {
   return (
     <main>
       <h1 className="title">Weather App</h1>
@@ -13,7 +14,8 @@ export const InputCard = ({ setCity }: P) => {
         <input
           type="text"
           name="city"
-          id="city"
+          // @ts-expect-error
+          onKeyUp={(e) => e.key === 'Enter' && setCity(e?.target?.value || '')}
           placeholder="Enter city name"
           className={classes.cityInput}
         />
@@ -22,7 +24,7 @@ export const InputCard = ({ setCity }: P) => {
 
         <button
           className={classes.getLocationButton}
-          onClick={() => setCity('surat')}
+          onClick={handleGetDeviceLocation}
         >
           Get Device Location
         </button>

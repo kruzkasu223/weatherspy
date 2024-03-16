@@ -4,34 +4,40 @@ import FeelsLikeIcon from '../assets/feels-like.svg?react'
 import HumidityIcon from '../assets/humidity.svg?react'
 import LocationIcon from '../assets/location.svg?react'
 import { ImageWithFallback } from '.'
+import { WeatherData } from '../utils'
+import { capitalCase } from 'change-case'
 
 type P = {
-  setCity: React.Dispatch<React.SetStateAction<string>>
+  handleBack: () => void
+  weatherData: WeatherData
 }
 
-export const WeatherCard = ({ setCity }: P) => {
+export const WeatherCard = ({ handleBack, weatherData }: P) => {
   return (
     <main>
       <div className="title">
-        <ArrowLeftIcon onClick={() => setCity('')} /> Weather App
+        <ArrowLeftIcon onClick={handleBack} /> Weather App
       </div>
 
       <div className={classes.weatherMainWrapper}>
         <ImageWithFallback
           width={200}
           height={200}
-          src="https://openweathermap.org/img/wn/10d@4x.png"
+          src={`https://openweathermap.org/img/wn/${weatherData.icon}@4x.png`}
           fallbackSrc="/fallback.svg"
-          alt=""
+          alt={weatherData.description}
+          title={weatherData.description}
           className={classes.weatherIcon}
         />
         <div className={classes.weatherTemperature}>
-          <span>13°</span>C
+          <span>{weatherData.temperature}°</span>C
         </div>
-        <div className={classes.weatherDescription}>Broken Clouds</div>
+        <div className={classes.weatherDescription}>
+          {capitalCase(weatherData.description)}
+        </div>
         <div className={classes.weatherCity}>
           <LocationIcon />
-          Kathmandu, Nepal
+          {weatherData.city}, {weatherData.country}
         </div>
       </div>
 
@@ -39,7 +45,9 @@ export const WeatherCard = ({ setCity }: P) => {
         <div className={classes.weatherStats}>
           <FeelsLikeIcon className={classes.weatherStatsIcon} />
           <div className={classes.weatherStatsTexts}>
-            <div className={classes.weatherStatsTextNumber}>17°C</div>
+            <div className={classes.weatherStatsTextNumber}>
+              {weatherData.feelsLike}°C
+            </div>
             <div className={classes.weatherStatsText}>Feels like</div>
           </div>
         </div>
@@ -49,7 +57,9 @@ export const WeatherCard = ({ setCity }: P) => {
             className={`${classes.weatherStatsIcon} ${classes.humidity}`}
           />
           <div className={classes.weatherStatsTexts}>
-            <div className={classes.weatherStatsTextNumber}>84%</div>
+            <div className={classes.weatherStatsTextNumber}>
+              {weatherData.humidity}%
+            </div>
             <div className={classes.weatherStatsText}>Humidity</div>
           </div>
         </div>
