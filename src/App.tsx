@@ -1,13 +1,6 @@
+import { InputCard } from './components'
 import './styles/App.css'
 
-function App() {
-  return (
-    <main>
-      <section>
-        <span>WeatherSpy</span>
-      </section>
-    </main>
-  )
+export const App = () => {
+  return <InputCard />
 }
-
-export default App

@@ -1,0 +1,62 @@
+.inputWrapper {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cityInput {
+  border: 2px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-align: center;
+  outline-color: var(--accent-color);
+}
+
+.cityInput::placeholder {
+  color: var(--gray-text-color);
+}
+
+.divider {
+  color: var(--gray-text-color);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid var(--gray-color);
+}
+
+.divider:not(:empty)::before {
+  margin-right: 16px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 16px;
+}
+
+.getLocationButton {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease-in-out 250ms;
+}
+
+.getLocationButton:hover {
+  color: var(--accent-color);
+  background-color: white;
+  outline: 1px solid var(--accent-color);
+}
