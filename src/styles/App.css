@@ -10,4 +10,17 @@ main {
   color: var(--accent-color);
   padding: 20px 28px;
   border-bottom: 2px solid var(--gray-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+}
+
+.title svg {
+  cursor: pointer;
+  transition: all ease-in-out 150ms;
+}
+
+.title svg:hover {
+  transform: translateX(-4px);
 }

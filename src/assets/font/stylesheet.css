@@ -1,5 +1,18 @@
 @font-face {
-  font-family: 'Urbane Demi';
+  font-family: 'Urbane';
+  src: url('Urbane-Medium.eot');
+  src: local('Urbane Medium'), local('Urbane-Medium'),
+    url('Urbane-Medium.eot?#iefix') format('embedded-opentype'),
+    url('Urbane-Medium.woff2') format('woff2'),
+    url('Urbane-Medium.woff') format('woff'),
+    url('Urbane-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Urbane';
   src: url('Urbane-DemiBold.eot');
   src: local('Urbane Demi Bold'), local('Urbane-DemiBold'),
     url('Urbane-DemiBold.eot?#iefix') format('embedded-opentype'),
@@ -8,18 +21,5 @@
     url('Urbane-DemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Urbane Demi';
-  src: url('Urbane-DemiBoldItalic.eot');
-  src: local('Urbane Demi Bold Italic'), local('Urbane-DemiBoldItalic'),
-    url('Urbane-DemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('Urbane-DemiBoldItalic.woff2') format('woff2'),
-    url('Urbane-DemiBoldItalic.woff') format('woff'),
-    url('Urbane-DemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
   font-display: swap;
 }

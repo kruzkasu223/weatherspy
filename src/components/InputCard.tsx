@@ -1,6 +1,10 @@
 import classes from '../styles/InputCard.module.css'
 
-export const InputCard = () => {
+type P = {
+  setCity: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const InputCard = ({ setCity }: P) => {
   return (
     <main>
       <h1 className="title">Weather App</h1>
@@ -16,7 +20,10 @@ export const InputCard = () => {
 
         <div className={classes.divider}>or</div>
 
-        <button className={classes.getLocationButton}>
+        <button
+          className={classes.getLocationButton}
+          onClick={() => setCity('surat')}
+        >
           Get Device Location
         </button>
       </div>

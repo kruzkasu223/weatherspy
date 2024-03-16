@@ -1,0 +1,67 @@
+.weatherMainWrapper {
+  padding: 0 28px 42px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weatherTemperature {
+  font-size: 70px;
+}
+
+.weatherTemperature span {
+  font-weight: 600;
+}
+
+.weatherDescription,
+.weatherCity {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.weatherCity {
+  display: flex;
+  align-items: center;
+}
+
+.weatherCity svg {
+  height: 22px;
+  width: 22px;
+  margin-right: 6px;
+}
+
+.weatherStatsWrapper {
+  border-top: 2px solid var(--gray-color);
+  display: flex;
+}
+
+.weatherStats {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  gap: 6px;
+}
+
+.weatherStats:first-child {
+  border-right: 2px solid var(--gray-color);
+}
+
+.weatherStatsIcon {
+  color: var(--accent-color);
+  height: 40px;
+  width: 40px;
+}
+
+.weatherStatsIcon.humidity {
+  margin-left: -10px;
+}
+
+.weatherStatsTextNumber {
+  font-size: 20px;
+}
+
+.weatherStatsText {
+  font-size: 12px;
+}
